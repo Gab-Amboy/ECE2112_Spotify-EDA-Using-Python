@@ -1,10 +1,27 @@
-#  ECE2112 Incentive: Exploratory Data Analysis on Spotify 2023 Dataset
+#  ECE2112: Exploratory Data Analysis on Spotify 2023 Dataset
 
 ## 📖 Background Information
-### **Exploratory Data Analysis**
+
+### <span style="color:blue"> **Exploratory Data Analysis** </span>
 Exploratory Data Analysis (EDA) is an approach used to investigate and summarize the main characteristics of a dataset, often through visualizations and descriptive statistics. It aims to uncover patterns, spot anomalies, test hypotheses, and check assumptions to provide a general understanding of the data. EDA typically involves libraries like Pandas for data manipulation, Matplotlib, and Seaborn for visual representation, which together aid in drawing insights about trends and relationships within the dataset. <br> 
 
 For this activity, an Exploratory Data Analysis (EDA) of the "Most Stremed Spotify Songs 2023" will be conducted.
+
+## ✒️ General Guidelines
+1. Begin by familiarizing yourself with the structure of the dataset. Check for missing values and data types, and perform an initial exploration to understand the different features available.
+2. Provide summary statistics to give an overview of key metrics such as the number of streams, release dates, and musical attributes (e.g., BPM, danceability).
+3. Use appropriate visualizations (e.g., bar charts, histograms, scatter plots) to uncover trends and patterns in the data. Ensure that your plots are well-labeled and easy to interpret.
+4. Investigate correlations between different variables and provide insights based on your findings. Explore relationships between streams and other musical characteristics like tempo, energy, or playlists.
+5. Based on your analysis, offer any insights or recommendations regarding the tracks, artists, or musical trends that could be useful for understanding what makes a track popular.
+
+## 📙 Overview of the Dataset 
+## 💻 Basic Descriptive Statistics
+## 🎤 Top Performers
+## 📈 Temporal Trends
+## 🎶 Genre and Music Characteristics
+## 🌠 Platform Popularity
+## 🔎 Advanced Analysis
+
 
 
 ## 🌐 Resources
@@ -17,13 +34,23 @@ For this activity, an Exploratory Data Analysis (EDA) of the "Most Stremed Spoti
 
 ## 📜 Version History
 
-### 1.1 Initial Upload
+### 1.1 
 - Created the `README.md` file
 - Uploaded the `spotify-2023.xlsx` to the repository
 
-### 1.2 Update on ` README.md `
+### 1.2 
 - Added `Background Information` tab
-- Added `Objectives` tab
 - Added `Resources` tab
+
+### 1.3
+- Added `General Guidelines` tab
+- Added `Documentation` tab
+- Added `Overview of the Dataset` tab 
+- Added `Basic Descriptive Statistics` tab
+- Added `Top Performers` tab
+- Added `Temporal Trends` tab
+- Added `Genre and Music Characteristics`
+- Added `Platform Popularity` tab
+- Added `Advanced Analysis` tab
 
 ---
