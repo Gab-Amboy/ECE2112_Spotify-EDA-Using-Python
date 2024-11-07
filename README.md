@@ -3,7 +3,7 @@
 ## 📖 Background Information
 
 ### <span style="color:blue"> **Exploratory Data Analysis** </span>
-Exploratory Data Analysis (EDA) is an approach used to investigate and summarize the main characteristics of a dataset, often through visualizations and descriptive statistics. It aims to uncover patterns, spot anomalies, test hypotheses, and check assumptions to provide a general understanding of the data. EDA typically involves libraries like Pandas for data manipulation, Matplotlib, and Seaborn for visual representation, which together aid in drawing insights about trends and relationships within the dataset. [(<sup>1</sup>)](#resources) <br> 
+Exploratory Data Analysis (EDA) is an approach used to investigate and summarize the main characteristics of a dataset, often through visualizations and descriptive statistics. It aims to uncover patterns, spot anomalies, test hypotheses, and check assumptions to provide a general understanding of the data. EDA typically involves libraries like Pandas for data manipulation, Matplotlib, and Seaborn for visual representation, which together aid in drawing insights about trends and relationships within the dataset. [(<sup>1</sup>)](#-resources) <br> 
 
 For this activity, an Exploratory Data Analysis (EDA) of the "Most Streamed Spotify Songs 2023" will be conducted.
 
