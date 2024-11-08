@@ -47,11 +47,63 @@ Output:
 ![image](https://github.com/user-attachments/assets/0bf05383-1741-44db-b591-37b15058b048)
 ![image](https://github.com/user-attachments/assets/402a23d1-6cd9-4ba4-a8d0-7b9e0afcb2a1)
 
+### Dataset Size/Structure
+Input:
+```python
+sp_row, sp_col = sp_data.shape
+print(f"The data set contains {sp_row} rows and {sp_col} columns.")
+```
+- `.shape` function was used to store the size of the dataset (row and column) into the `sp_row` and `sp_col` variables.
 
+Output:
+```
+The data set contains 953 rows and 24 columns.
+```
 
+### Data types of each column
+Input:
+```python
+data_summary = pd.DataFrame({
+    'Column Name': sp_data.columns,
+    'Data Type': sp_data.dtypes.values})
+
+print(data_summary)
+```
+- `data_summary` Data Frame was created solely to have column names but the `.dtypes` function can be used as well.
+
+Output:
+```python
+             Column Name Data Type
+0             track_name    object
+1         artist(s)_name    object
+2           artist_count     int64
+3          released_year     int64
+4         released_month     int64
+5           released_day     int64
+6   in_spotify_playlists     int64
+7      in_spotify_charts     int64
+8                streams    object
+9     in_apple_playlists     int64
+10       in_apple_charts     int64
+11   in_deezer_playlists    object
+12      in_deezer_charts     int64
+13      in_shazam_charts    object
+14                   bpm     int64
+15                   key    object
+16                  mode    object
+17        danceability_%     int64
+18             valence_%     int64
+19              energy_%     int64
+20        acousticness_%     int64
+21    instrumentalness_%     int64
+22            liveness_%     int64
+23         speechiness_%     int64
+```
+- As shown above, the data types of each column appear to be either _object_ or _int64_
 
 ## 💻 Basic Descriptive Statistics
 
+### Mean, Median and Standard Deviation of Streams
 
 ## 🎤 Top Performers
 
