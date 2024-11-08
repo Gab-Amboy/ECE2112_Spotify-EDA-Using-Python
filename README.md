@@ -33,13 +33,24 @@ import seaborn as sns
 
 ## 📙 Overview of the Dataset 
 
-## 💻 Basic Descriptive Statistics
-## 🎤 Top Performers
-## 📈 Temporal Trends
-## 🎶 Genre and Music Characteristics
-## 🌠 Platform Popularity
-## 🔎 Advanced Analysis
+The dataset contains information on the most-streamed Spotify songs in 2023, with columns for track name, artist(s), release year, genre, and various musical attributes (such as tempo and danceability). It also includes streaming data and playlist appearances across different platforms.
 
+## 💻 Basic Descriptive Statistics
+
+
+## 🎤 Top Performers
+
+
+## 📈 Temporal Trends
+
+
+## 🎶 Genre and Music Characteristics
+
+
+## 🌠 Platform Popularity
+
+
+## 🔎 Advanced Analysis
 
 
 ## 🌐 Resources
