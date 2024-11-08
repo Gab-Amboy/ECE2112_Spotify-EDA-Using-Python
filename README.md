@@ -35,7 +35,7 @@ import seaborn as sns
 > [!IMPORTANT]  
 > To access the dataset, download the `.csv` file from the [_Kaggle_ Website](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) or through the [spotify-2023.csv](spotify-2023.csv) file in this repository.
 
-### Loading the Dataset
+### **Loading the Dataset**
 Input:
 ```python
 sp_data = pd.read_csv('spotify-2023.csv', encoding='windows-1252')
@@ -47,7 +47,7 @@ Output:
 ![image](https://github.com/user-attachments/assets/0bf05383-1741-44db-b591-37b15058b048)
 ![image](https://github.com/user-attachments/assets/402a23d1-6cd9-4ba4-a8d0-7b9e0afcb2a1)
 
-### Dataset Size/Structure
+### **Dataset Size/Structure**
 Input:
 ```python
 sp_row, sp_col = sp_data.shape
@@ -60,7 +60,7 @@ Output:
 The data set contains 953 rows and 24 columns.
 ```
 
-### Data types of each column
+### **Data types of each column**
 Input:
 ```python
 data_summary = pd.DataFrame({
@@ -104,6 +104,38 @@ Output:
 ## 💻 Basic Descriptive Statistics
 
 ### Mean, Median and Standard Deviation of Streams
+Since the streams has an object data type, we must convert it into a numerical data type before it can be processed.
+
+Input: 
+```python
+sp_data['streams'] = pd.to_numeric(sp_data['streams'], errors='coerce')
+
+print(sp_data['streams'].dtype)
+```
+Output:
+```
+float64
+```
+- `pd.to_numeric()` function was used to convert the datatype of `streams` column into a `float64` datatype
+
+> [!NOTE]
+> This `streams` column can now be processed for the calculations of the mean, median and std. Furthermore, it will also allow us to utilize it for other statistics.
+
+Input:
+```python
+mean = round(sp_data['streams'].mean(),4)
+median = round(sp_data['streams'].median(),4)
+std = round(sp_data['streams'].std(),4)
+
+print(f" Mean: {mean} \n Median: {median} \n Standard Deviation: {std}")
+```
+Output:
+```python
+ Mean: 514137424.9391 
+ Median: 290530915.0 
+ Standard Deviation: 566856949.0389
+```
+- `.mean()`, `.median()`, and `.std()` functions were used to calculate for the mean, median and standard deviation respectively while `.round()` function was utilized to round the result to 4 decimal places.
 
 ## 🎤 Top Performers
 
