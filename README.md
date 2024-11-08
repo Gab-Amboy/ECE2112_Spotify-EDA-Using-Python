@@ -35,12 +35,19 @@ import seaborn as sns
 > [!IMPORTANT]  
 > To access the dataset, download the `.csv` file from the [_Kaggle_ Website](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) or through the [spotify-2023.csv](spotify-2023.csv) file in this repository.
 
-
 ### Loading the Dataset
+Input:
 ```python
 sp_data = pd.read_csv('spotify-2023.csv', encoding='windows-1252')
 sp_data
 ```
+- `encoding='windows-1252'` was used due to the data set having an object datatype which cannot be read by the default encoding of the `pd.read_csv()` function
+
+Output:
+![image](https://github.com/user-attachments/assets/0bf05383-1741-44db-b591-37b15058b048)
+![image](https://github.com/user-attachments/assets/402a23d1-6cd9-4ba4-a8d0-7b9e0afcb2a1)
+
+
 
 
 ## 💻 Basic Descriptive Statistics
