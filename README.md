@@ -32,8 +32,16 @@ import seaborn as sns
 ```
 
 ## 📙 Overview of the Dataset 
+> [!IMPORTANT]  
+> To access the dataset, download the `.csv` file from the [_Kaggle_ Website](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) or through the [spotify-2023.csv](spotify-2023.csv) file in this repository.
 
-The dataset contains information on the most-streamed Spotify songs in 2023, with columns for track name, artist(s), release year, genre, and various musical attributes (such as tempo and danceability). It also includes streaming data and playlist appearances across different platforms.
+
+### Loading the Dataset
+```python
+sp_data = pd.read_csv('spotify-2023.csv', encoding='windows-1252')
+sp_data
+```
+
 
 ## 💻 Basic Descriptive Statistics
 
