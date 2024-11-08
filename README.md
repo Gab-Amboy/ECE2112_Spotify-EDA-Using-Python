@@ -18,16 +18,21 @@ For this activity, an Exploratory Data Analysis (EDA) of the "Most Streamed Spot
 ![Anaconda](https://img.shields.io/badge/Anaconda-42B029?style=for-the-badge&logo=anaconda&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-Before we begin, we need to 
+> [!IMPORTANT]  
+> In order to run the code, a Python IDE is needed, which in this case is Jupyter Notebook accessed through Anaconda.
 
-
-
+The libraries can be imported by:
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
 
 ## 📙 Overview of the Dataset 
+
 ## 💻 Basic Descriptive Statistics
 ## 🎤 Top Performers
 ## 📈 Temporal Trends
@@ -65,5 +70,9 @@ Before we begin, we need to
 - Added `Genre and Music Characteristics`
 - Added `Platform Popularity` tab
 - Added `Advanced Analysis` tab
+
+### 1.4
+- Added `Software and Libraries Used` tab
+
 
 ---
