@@ -43,11 +43,11 @@ sp_data
 ```
 - `encoding='windows-1252'` was used due to the data set having an object datatype which cannot be read by the default encoding of the `pd.read_csv()` function
 
-Output:
+Output: <br>
 ![image](https://github.com/user-attachments/assets/0bf05383-1741-44db-b591-37b15058b048)
 ![image](https://github.com/user-attachments/assets/402a23d1-6cd9-4ba4-a8d0-7b9e0afcb2a1)
 
-### **Dataset Size/Structure**
+### **Dataset Size**
 Input:
 ```python
 sp_row, sp_col = sp_data.shape
@@ -108,10 +108,45 @@ Output:
    - `mode`
 <br>While the other columns are int64 data types.
 
+### Null Count for Each Column
+Input:
+```python
+sp_data.isnull().sum()
+```
+Output:
+```python
+track_name               0
+artist(s)_name           0
+artist_count             0
+released_year            0
+released_month           0
+released_day             0
+in_spotify_playlists     0
+in_spotify_charts        0
+streams                  0
+in_apple_playlists       0
+in_apple_charts          0
+in_deezer_playlists      0
+in_deezer_charts         0
+in_shazam_charts        50
+bpm                      0
+key                     95
+mode                     0
+danceability_%           0
+valence_%                0
+energy_%                 0
+acousticness_%           0
+instrumentalness_%       0
+liveness_%               0
+speechiness_%            0
+dtype: int64
+```
+<ins>**General Description:**</ins> It can be observed that only the `key` and the `in_shazam_charts` columns are the ones with null values. 
+
 ## 💻 Basic Descriptive Statistics
 
 ### Mean, Median and Standard Deviation of Streams
-Since the streams has an object data type, we must convert it into a numerical data type before it can be processed.
+Since the streams has the object data type, we must convert it into a numerical data type before it can be processed.
 
 Input: 
 ```python
@@ -119,11 +154,11 @@ sp_data['streams'] = pd.to_numeric(sp_data['streams'], errors='coerce')
 
 print(sp_data['streams'].dtype)
 ```
+- `pd.to_numeric()` function was used to convert the datatype of `streams` column into a `float64` datatype
 Output:
 ```
 float64
 ```
-- `pd.to_numeric()` function was used to convert the datatype of `streams` column into a `float64` datatype
 
 > [!NOTE]
 > This `streams` column can now be processed for the calculations of the mean, median and std. Furthermore, it will also allow us to utilize it for other statistics.
@@ -174,7 +209,7 @@ plt.grid(axis='y', linestyle='--')
 plt.show()
 ```
 - `.value_counts()` function was used to count the occurances of the how many tracks were released in that year/by the artist.
-- `.sort_index()` was used to sort the indices in descending order.
+- `.sort_index()` was used to sort the index in descending order.
 
 Output: <br>
 ![Tracks by release year](https://github.com/user-attachments/assets/2c9a362a-4bac-4a4d-81e3-04ac431110e4)
@@ -244,8 +279,10 @@ plt.gca().invert_yaxis()
 plt.show()
 ```
 
-Output:
+Output:<br>
 ![download](https://github.com/user-attachments/assets/0680283f-000a-4d1f-969c-3873524c9f5c)
+
+<ins>**General Description:**</ins> As observed from the bar plot above, the top 5 most streamed tracks according to the number of streams are **Blinding Lights**, **Shape of You**, **Someone You Loved**, **Dance Monkey** and **Sunflower** in order.
 
 ### Top 5 Most Frequent Artists
 Input:
@@ -266,8 +303,9 @@ plt.gca().invert_yaxis()
 plt.show()
 ```
 
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/6e92d142-bb12-45e3-8d8c-4479ac4e6e78)
+<ins>**General Description:**</ins> As observed from the bar plot above, the top 5 artist with the most amount of released tracks are `Taylor Swift`, `The Weeknd`, `Bad Bunny`, `SZA`, and `Harry Styles`.
 
 ## 📈 Temporal Trends
 ### Tracks Released Over Time (Annually)
