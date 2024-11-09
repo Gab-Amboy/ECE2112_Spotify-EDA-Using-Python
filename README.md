@@ -1,5 +1,8 @@
 #  ECE2112: Exploratory Data Analysis on Spotify 2023 Dataset using Python
 
+![Exploratory](https://github.com/user-attachments/assets/3e3c9eb2-8e53-4770-8507-1b10208878b9)
+
+
 ## 📖 Background Information
 
 ### <span style="color:blue"> **Exploratory Data Analysis** </span>
