@@ -214,7 +214,7 @@ plt.show()
 Output: <br>
 ![Tracks by release year](https://github.com/user-attachments/assets/2c9a362a-4bac-4a4d-81e3-04ac431110e4)
 
-<ins>**General Description:**</ins> The left histogram shows the number of tracks released each year, showing an increase in recent years especially after 2020. This shows that a lot of songs were released during that periond in time. The right box plot shows the distribution of release years, showing the outliers which are tracks released before 2020.
+<ins>**General Description:**</ins> The left histogram shows the number of tracks released each year, showing an increase in recent years especially after 2020. This shows that a lot of songs were released during that period in time. The right box plot shows the distribution of release years, showing the outliers which are tracks released before 2020.
 
 ### Distribution of Tracks by Number of Artist(s)
 Input:
