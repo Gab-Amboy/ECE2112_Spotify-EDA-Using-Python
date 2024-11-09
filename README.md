@@ -480,7 +480,7 @@ plt.show()
 Output: <br>
 ![download](https://github.com/user-attachments/assets/d82a4fc1-b56e-4ab6-a5ee-7e2fe38f3f61)
 
-<ins>**General Description:**</ins> Based from the observation of the bar graph for the Distribution of of Musical Keys by Streams, it was observed that there is a preference for tracks with Major modes over Minor modes. Additionally, it appears that there are more tracks using the C# key which has the highest track count among the musical keys.
+<ins>**General Description:**</ins> Based from the observation of the bar graph for the `Distribution of of Musical Keys by Streams`, it appears that tracks using the C# key has the highest amount of streams. On the other hand, tracks with the D# key have the least amount of streams.
 
 ### Distribution of Mode by Streams
 Input:
