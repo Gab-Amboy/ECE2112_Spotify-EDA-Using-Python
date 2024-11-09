@@ -619,6 +619,8 @@ Output:<br>
 ## 📝 Conclusion
 In conclusion, this exploratory data analysis on Spotify's most streamed songs of 2023 provided valuable insights into the factors that may contribute to a song's popularity. By examining various musical attributes like danceability, and energy, alongside basic statistics and visualizations, it allowed for identifying the patterns and trends across top-performing tracks. The artist and release year distributions highlighted shifts in music preferences over time, showing that recent tracks often dominate streaming charts. Analyzing correlations among attributes also suggested possible relationships between musical elements and the number of streams. This analysis demonstrates how usefel an Exploratory Data Analysis actually is and how powerful it can be in looking for trends of raw data.
 
+## ✒️ Author
+### Submitted by: Amboy, John Gabriel D. | 2ECE-A
 
 ## 🌐 Resources
 - [Pandas Documentation](https://www.datacamp.com/cheat-sheet/pandas-cheat-sheet-for-data-science-in-python)
