@@ -324,8 +324,9 @@ plt.xticks(rel_year.index, rotation=90, fontsize=8)
 plt.show()
 ```
 
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/3bee8bd1-d88a-4612-80b5-fc27bb5e157a)
+<ins>**General Description:**</ins> Based from the observation of the line graph, it was observed that there was a jump in the number of tracks released around the 2020 year mark. Furthermore, the latest/oldest track released that is recorded in spotify was found out to be in 1930.
 
 ### Tracks Released Over Time (Monthly)
 Input:
@@ -369,7 +370,7 @@ plt.title('Monthly Distribution of Released Tracks', fontweight='bold', color='t
 plt.show()
 ```
 
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/9b2d8a19-cb59-4e37-a2c5-1fa0b133fbc3)
 
 <ins>**General Description:**</ins> Based from the observation of the line graph, it goes to show that most tracks were released around the month of Janurary; while, the month of August, experiences the least amount of tracks released.
@@ -389,7 +390,7 @@ sns.heatmap(corr, cmap='coolwarm', annot=True, linecolor='black',linewidths=0.3)
 plt.title("Correlation Heatmap between Streams and Musical Attributes", fontweight='bold', color='green', fontsize=16)
 plt.show()
 ```
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/36256d69-4179-4e03-8f2e-0cb34de314eb)
 
 <ins>**General Description:**</ins> The heatmap shows the correlation between the _streams_ and the _musical attributes_ in addition to the correlation between the musical attributes itself. From observation, there doesn't seem to be an attribute that influence the number of streams the most since the correlation between the _streams_ and _musical attributes_ display a negative value. Therefore, it can be said that due to the different tastes of people, the number of streams is not influenced by its musical attribute.
@@ -435,7 +436,7 @@ plt.gca().invert_yaxis()
 
 plt.show()
 ```
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/e7b6df34-e429-4f67-b849-42d9254599dd)
 <ins>**General Description:**</ins> Based on the observation of the bar plot for `Platform Popularity Distribution`, there was a stark difference between the 3 platforms included in the dataset. Furthermore, it indicates that Spotify, as a platform, dominates in terms of the volume of tracks featured it its playlists.
 
@@ -476,7 +477,7 @@ plt.gca().invert_yaxis()
 
 plt.show()
 ```
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/d82a4fc1-b56e-4ab6-a5ee-7e2fe38f3f61)
 
 <ins>**General Description:**</ins> Based from the observation of the bar graph for the Distribution of of Musical Keys by Streams, it was observed that there is a preference for tracks with Major modes over Minor modes. Additionally, it appears that there are more tracks using the C# key which has the highest track count among the musical keys.
@@ -507,7 +508,7 @@ plt.ylabel('Mode', fontsize=12)
 
 plt.show()
 ```
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/34b99f4c-1eb0-41d7-9aa1-d6b854bd7819)
 
 <ins>**General Description:**</ins> Based from the observation of the bar graph for the `Distribution of Mode by Streams`, it was observed that tracks with a mode of major was preferred over tracks with a mode of minor.
@@ -557,10 +558,11 @@ for index, value in enumerate(artist_popularity.values):
     plt.text(value, index, f'{value:,}', color='black')
 plt.show()
 ```
-Output:
+Output: <br>
 ![download](https://github.com/user-attachments/assets/808f06dd-d1f1-42f1-bdbb-dc296997d612)
 
-# Top 10 Most Frequently Appearing Artist in Charts
+
+### Top 10 Most Frequently Appearing Artist in Charts
 Input:
 ```python
 # Converts the data type from object to float/numeric
@@ -610,9 +612,9 @@ for index, value in enumerate(charts_popularity.values):
     plt.text(value, index, f'{value:,}', color='black')
 plt.show()
 ```
-Output:
+Output:<br>
 ![download](https://github.com/user-attachments/assets/9c55e485-d705-4ab6-a88a-172c3298a055)
-
+<ins>**General Description:**</ins> Based from the outputs of the last two bar plots, it was observed that tracks of `Taylor Swift` tops the plots of Most frequently appearing artist in playlists and in charts. Honorable mentions that are still within the top 10 in both of the plots are `The Weeknd`, `Bad bunny`, `Olivia Rodrigo`, `SZA` and `Ed Sheeran`.
 
 ## 📝 Conclusion
 
