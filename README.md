@@ -354,12 +354,227 @@ plt.show()
 Output:
 ![download](https://github.com/user-attachments/assets/36256d69-4179-4e03-8f2e-0cb34de314eb)
 
+<ins>**General Description:**</ins> The heatmap shows the correlation between the _streams_ and the _musical attributes_ in addition to the correlation between the musical attributes itself. From observation, there doesn't seem to be an attribute that influence the number of streams the most since the correlation between the _streams_ and _musical attributes_ display a negative value. Therefore, it can be said that due to the different tastes of people, the number of streams is not influenced by its musical attribute.
 
+For the correlation between `danceablity_%` and `energy_%`, the heatmap shows a moderate correlation due to the positive value it exhibits. Additionally, a low correlation seems to be exhibited between `valence_%` and `acousticness_%` due to its negative value.
 
 ## 🌠 Platform Popularity
+### Platform Popularity Distribution
+Input:
+```python
+# Converts the data type of in_deezer_playlist from object to float/numeric
+sp_data['in_deezer_playlists'] = pd.to_numeric(sp_data['in_deezer_playlists'], errors='coerce')
 
+# Calculating the track counts in different platforms
+spotify_playlist = sp_data['in_spotify_playlists'].sum()
+deezer_playlist = sp_data['in_deezer_playlists'].sum()
+apple_playlist = sp_data['in_apple_playlists'].sum()
+
+print(f"\n Track count in Spotify Playlists: {spotify_playlist} \n Track count in Deezer Playlists: {deezer_playlist} \n Track count in Apple Playlists: {apple_playlist}")
+```
+Output:
+```
+ Track count in Spotify Playlists: 4955719 
+ Track count in Deezer Playlists: 95913.0 
+ Track count in Apple Playlists: 64625
+```
+To plot the data calculated, we will use a bar plot to see the differences between the platforms.<br>
+Input: 
+```python
+# Putting counts into a list for easy plotting
+platforms = ['Spotify Playlists', 'Deezer Playlists', 'Apple Playlists']
+no_playlist = [spotify_playlist, deezer_playlist, apple_playlist]
+
+# Plots a bar graph for the Platform popularity Distribution
+plt.figure(figsize=(10, 6))
+plt.barh(platforms, no_playlist, color=['#1DB954', '#E07A5F', '#FA4D09'], zorder=3)
+plt.grid(axis='x', linestyle='--', zorder=0)
+
+plt.title('Platform Popularity Distribution', fontweight='bold', color='#90A583', fontsize=16)
+plt.xlabel('No. of Tracks', fontsize=12)
+plt.ylabel('Platform', fontsize=12)
+plt.gca().invert_yaxis()  
+
+plt.show()
+```
+Output:
+![download](https://github.com/user-attachments/assets/e7b6df34-e429-4f67-b849-42d9254599dd)
+<ins>**General Description:**</ins> Based on the observation of the bar plot for `Platform Popularity Distribution`, there was a stark difference between the 3 platforms included in the dataset. Furthermore, it indicates that Spotify, as a platform, dominates in terms of the volume of tracks featured it its playlists.
 
 ## 🔎 Advanced Analysis
+### Distribution of Keys by Streams
+Input:
+```python
+streams_by_key = sp_data.groupby('key')['streams'].sum().sort_values(ascending=False)
+streams_by_key
+```
+Output:
+```python
+key   streams
+C#    7.251363e+10
+G     4.344954e+10
+G#    4.339898e+10
+D     4.289157e+10
+B     4.206718e+10
+F     4.169173e+10
+F#    3.813251e+10
+E     3.580483e+10
+A#    3.149110e+10
+A     3.025426e+10
+D#    1.825021e+10
+Name: streams, dtype: float64
+```
+Input:
+```python
+# Plots the Distribution of Musical Keys by streams using a bar graph
+plt.figure(figsize=(12, 6))
+plt.barh(streams_by_key.index, streams_by_key.values, color=['#F94144', '#F65A38', '#F3722C', '#F8961E', '#F9C74F', '#C5C35E', '#90BE6D', '#43AA8B', '#3A9278','#4D908E','#577590'], zorder=3)
+plt.grid(axis='x', linestyle='--', zorder=0)
+
+plt.title('Distribution of Musical Keys by Streams', fontweight='bold', color='black', fontsize=16)
+plt.xlabel('No. of Streams', fontsize=12)
+plt.ylabel('Musical Keys', fontsize=12)
+plt.gca().invert_yaxis()  
+
+plt.show()
+```
+Output:
+![download](https://github.com/user-attachments/assets/d82a4fc1-b56e-4ab6-a5ee-7e2fe38f3f61)
+
+<ins>**General Description:**</ins> Based from the observation of the bar graph for the Distribution of of Musical Keys by Streams, it was observed that there is a preference for tracks with Major modes over Minor modes. Additionally, it appears that there are more tracks using the C# key which has the highest track count among the musical keys.
+
+### Distribution of Mode by Streams
+Input:
+```python
+streams_by_mode = sp_data.groupby('mode')['streams'].sum().sort_values(ascending=False)
+streams_by_mode
+```
+Output:
+```python
+mode     streams
+Major    2.936232e+11
+Minor    1.958356e+11
+Name: streams, dtype: float64
+```
+Input:
+```python
+# Plots the Distribution of Mode by streams using a bar graph
+plt.figure(figsize=(12, 3))
+plt.barh(streams_by_mode.index, streams_by_mode.values, color=['#F94144','#577590'], zorder=3)
+plt.grid(axis='x', linestyle='--', zorder=0)
+
+plt.title('Distribution of Mode by Streams', fontweight='bold', color='black', fontsize=14)
+plt.xlabel('No. of Streams', fontsize=12)
+plt.ylabel('Mode', fontsize=12)
+
+plt.show()
+```
+Output:
+![download](https://github.com/user-attachments/assets/34b99f4c-1eb0-41d7-9aa1-d6b854bd7819)
+
+<ins>**General Description:**</ins> Based from the observation of the bar graph for the `Distribution of Mode by Streams`, it was observed that tracks with a mode of major was preferred over tracks with a mode of minor.
+
+### Top 10 Most Frequently Appearing Artist in Playlists
+Input:
+```python
+# Create a separate DataFrame for calculating the total playlist count
+playlist = sp_data[['artist(s)_name', 'in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].copy()
+
+# Calculate the total playlist count in the Playlist
+playlist['total_playlist'] = (
+    playlist['in_spotify_playlists'] + 
+    playlist['in_deezer_playlists'] + 
+    playlist['in_apple_playlists']
+)
+
+artist_popularity = playlist.groupby('artist(s)_name')['total_playlist'].sum().sort_values(ascending=False).head(10)
+artist_popularity
+```
+Output:
+```python
+artist(s)_name
+Taylor Swift      114815.0
+Harry Styles       91898.0
+The Weeknd         77431.0
+Bad Bunny          52657.0
+Frank Ocean        52162.0
+Olivia Rodrigo     49359.0
+SZA                45786.0
+Doja Cat           36405.0
+Ed Sheeran         30690.0
+Arctic Monkeys     28068.0
+Name: total_playlist, dtype: float64
+```
+Input:
+```python
+plt.figure(figsize=(12, 6))
+plt.barh(artist_popularity.index, artist_popularity.values, color='#FF6347', zorder=3)
+plt.grid(axis='x', linestyle='--', zorder=0)
+
+plt.title('Top 10 Most Frequently Appearing Artist in Playlists')
+plt.xlabel('Total Appearances')
+plt.gca().invert_yaxis()  # Flip to have the highest at the top
+
+for index, value in enumerate(artist_popularity.values):
+    plt.text(value, index, f'{value:,}', color='black')
+plt.show()
+```
+Output:
+![download](https://github.com/user-attachments/assets/808f06dd-d1f1-42f1-bdbb-dc296997d612)
+
+# Top 10 Most Frequently Appearing Artist in Charts
+Input:
+```python
+# Converts the data type from object to float/numeric
+sp_data['in_shazam_charts'] = pd.to_numeric(sp_data['in_shazam_charts'], errors='coerce')
+
+# Create a separate DataFrame for calculating the total chart counts
+charts = sp_data[['artist(s)_name', 'in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts']].copy()
+
+# Calculate the total charts in the new DataFrame
+charts['total_charts'] = (
+    charts['in_spotify_charts'] + 
+    charts['in_apple_charts'] + 
+    charts['in_shazam_charts'] + 
+    charts['in_deezer_charts']
+)
+
+# Summing total chart appearances for each artist and getting the top 10
+charts_popularity = charts.groupby('artist(s)_name')['total_charts'].sum().sort_values(ascending=False).head(10)
+charts_popularity
+```
+Output:
+```python
+artist(s)_name
+Taylor Swift         4277.0
+The Weeknd           1952.0
+Bad Bunny            1779.0
+SZA                  1653.0
+Olivia Rodrigo       1495.0
+NewJeans             1341.0
+Dave, Central Cee    1267.0
+Ed Sheeran           1260.0
+Gunna                1257.0
+Latto, Jung Kook     1246.0
+Name: total_charts, dtype: float64
+```
+Input:
+```python
+plt.figure(figsize=(12, 6))
+plt.barh(charts_popularity.index, charts_popularity.values, color='#FF6347', zorder=3)
+plt.grid(axis='x', linestyle='--', zorder=0)
+
+plt.title('Top 10 Most Frequently Appearing Artist in Charts')
+plt.xlabel('Total Appearances')
+plt.gca().invert_yaxis()  # Flip to have the highest at the top
+
+for index, value in enumerate(charts_popularity.values):
+    plt.text(value, index, f'{value:,}', color='black')
+plt.show()
+```
+Output:
+![download](https://github.com/user-attachments/assets/9c55e485-d705-4ab6-a88a-172c3298a055)
+
 
 
 ## 🌐 Resources
