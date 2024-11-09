@@ -617,6 +617,7 @@ Output:<br>
 <ins>**General Description:**</ins> Based from the outputs of the last two bar plots, it was observed that tracks of `Taylor Swift` tops the plots of Most frequently appearing artist in playlists and in charts. Honorable mentions that are still within the top 10 in both of the plots are `The Weeknd`, `Bad bunny`, `Olivia Rodrigo`, `SZA` and `Ed Sheeran`.
 
 ## 📝 Conclusion
+In conclusion, this exploratory data analysis on Spotify's most streamed songs of 2023 provided valuable insights into the factors that may contribute to a song's popularity. By examining various musical attributes like danceability, and energy, alongside basic statistics and visualizations, it allowed for identifying the patterns and trends across top-performing tracks. The artist and release year distributions highlighted shifts in music preferences over time, showing that recent tracks often dominate streaming charts. Analyzing correlations among attributes also suggested possible relationships between musical elements and the number of streams. This analysis demonstrates how usefel an Exploratory Data Analysis actually is and how powerful it can be in looking for trends of raw data.
 
 
 ## 🌐 Resources
@@ -625,7 +626,5 @@ Output:<br>
 - [Seaborn Cheatsheet](https://www.datacamp.com/cheat-sheet/python-seaborn-cheat-sheet)
 - [Most Streamed Spotify Songs 2023 Dataset](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023)
 - [Sahoo, K., Samal, A. K., Pramanik, J., & Pani, S. K. (2019). Exploratory data analysis using Python. International Journal of Innovative Technology and Exploring Engineering, 8(12), 4727-4735](https://www.researchgate.net/profile/Dr-Subhendu-Pani/publication/337146539_IJITEE/links/5dc70b124585151435fb427e/IJITEE.pdf)
-
-
 
 ---
